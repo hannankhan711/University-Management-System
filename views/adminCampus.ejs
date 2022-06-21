@@ -1,0 +1,95 @@
+<%- include( "partials/adminheader" ) %>
+<!-- facultyname,facultyfield,schoolname,universityname -->
+<div class="container">
+    <div class="table">
+        <table id="customers">
+            <tr>
+                <th>
+                    Campus ID
+                </th>
+                <th>
+                    Campus name
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Distance
+                </th>
+                <th>
+                    universityname
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+            <% campus.forEach(function(element){ %>
+            <tr>
+                <td><%= element.campus_id %></td>
+                <td><%= element.campusname %></td>
+                <td><%= element.address %></td>
+                <td><%= element.distancethroughthecity %></td>
+                <td><%= element.universityname %></td>
+                <td class="td-buttons"><a href="/login/admin/1/campus/<%= element.campus_id %>"
+                        class="btn btn-success btn-edit"><i class="fas fa-edit"></i></a>
+                    <form action="/login/admin/1/campus/<%= element.campus_id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+    </div>
+    <div style="text-align: center;padding-bottom: 10px;">
+        <a href="/login/admin/1/campus/new" class="btn btn-primary">New</a>
+    </div>
+</div>
+
+<style>
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+        background-color: #ddd;
+    }
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #eb4034;
+        color: white;
+    }
+
+    .container {
+        background-color: white;
+        margin-top: 100px;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    }
+
+    .table {
+        padding-top: 30px;
+        padding-bottom: 15px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .buttons {
+        text-align: center;
+    }
+</style>

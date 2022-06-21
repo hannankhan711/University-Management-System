@@ -1,0 +1,163 @@
+<%- include( "partials/headers" ) %>
+
+<% programmetitle = studentData[0].programmetitle %>
+<% enrolled = studentData[0].yearofenrollment %>
+<% birthday = studentData[0].birthday %>
+<% studentname = studentData[0].studentname %>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="font-size: x-large;">
+    <a class="navbar-brand" style="font-size: xx-large;" href="/login/faculty/<%= faculty.faculty_id%>"><i
+            class="fas fa-user fa-lg"></i> <%= faculty.facultyname%></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/login/faculty/<%= faculty.faculty_id%>">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login/faculty/<%= faculty.faculty_id%>/student">Student List</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Student Detail</h1>
+    <div class="image">
+        <div class="img-thumbnail img-fluid">
+            <img class="img-fluid" src="/images/profile_pic.jpg" />
+        </div>
+    </div>
+    <div class="details">
+        <h3>Personal Details:</h3>
+        <label class="personal">Name:</label> <label id="name" class="fields"><%= studentname%></label><br>
+        <label class="personal">Birthday:</label> <label id="birthday"
+            class="fields"><%= birthday.toDateString()%></label><br>
+        <label class="personal">Enrollment:</label> <label id="enrolled"
+            class="fields"><%= enrolled.toDateString() %></label>
+    </div>
+    <div class="courseDetail">
+        <h3>Programme Details:</h3>
+        <h4><%= programmetitle%></h4>
+        <ul class="list-group">
+            <% studentData.forEach(function(element){ %>
+            <li class="list-group-item"><%= element.coursename %></li>
+            <% }) %>
+        </ul>
+    </div>
+    <div class="button">
+        <a href="/login/faculty/<%= faculty.faculty_id%>/student/<%= studentId%>/update"
+            class="btn btn-outline-primary btn-lg" id="update">Update</a>
+        <form action="/login/faculty/<%= faculty.faculty_id%>/student/<%= studentId%>?_method=DELETE" method="POST">
+            <button class="btn btn-outline-danger btn-lg" id="delete">Delete</button>
+        </form>
+    </div>
+
+</div>
+
+<style>
+    h1 {
+        padding-top: 30px;
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+    }
+
+    .container {
+        background-color: white;
+        border-radius: 20px;
+        margin-top: 40px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    body {
+        background-color: #56abf5;
+    }
+
+    .img-thumbnail {
+        text-align: center;
+        width: 300px;
+    }
+
+    .image {
+        display: inline;
+        text-align: -webkit-center;
+    }
+
+    .details {
+        width: 100%;
+        border: 1px solid #d1d6de;
+        border-radius: 3px;
+        margin-bottom: 30px;
+        margin-top: 40px;
+    }
+
+    .courseDetail {
+        width: 100%;
+        border: 1px solid #d1d6de;
+        border-radius: 3px;
+    }
+
+    .personal {
+        margin-left: 100px;
+        margin-bottom: 20px;
+        font-size: larger;
+        font-weight: 500;
+    }
+
+    h3 {
+        margin-bottom: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+
+    h4 {
+        margin-left: 60px;
+        margin-bottom: 30px;
+    }
+
+    ul {
+        margin-left: 100px;
+    }
+
+    .list-group {
+        width: 300px;
+        margin-bottom: 30px;
+    }
+
+    .list-group-item:hover {
+        background-color: #56abf5;
+        color: white;
+    }
+
+    .button {
+        display: flex;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+
+    #update {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    #enrolled {
+        margin-left: 40px;
+    }
+
+    #birthday {
+        margin-left: 60px;
+    }
+
+    #name {
+        margin-left: 80px;
+    }
+
+    .fields {
+        font-size: larger;
+    }
+</style>

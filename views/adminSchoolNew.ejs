@@ -1,0 +1,21 @@
+<%- include( "partials/adminheader" ) %>
+
+<!-- INSERT INTO schools(schoolName,building,campus_id,faculty_id) VALUES ('Terna College of Engg',1,1,1); -->
+<div class="container container-property">
+    <h1>This is the new school page</h1>
+    <form action="/login/admin/1/school" method="POST" class="form-group">
+        <input type="text" name="schoolName" placeholder="School Name" class="form-control" required>
+        <input type="text" name="building" placeholder="building number" class="form-control" required>
+        <select name="campus_id" class="form-control" required>
+            <% campusDetails.forEach(function(element){ %>
+            <option value="<%= element.campus_id %>"><%= element.campusname %></option>
+            <% }) %>
+        </select>
+        <select name="faculty_id" class="form-control" required>
+            <% facultyDetails.forEach(function(element){ %>
+            <option value="<%= element.faculty_id %>"><%= element.facultyname %></option>
+            <% }) %>
+        </select>
+        <input type="submit" class="btn btn-outline-success btn-form">
+    </form>
+</div>

@@ -1,0 +1,81 @@
+<%- include( "partials/adminheader" ) %>
+
+<div class="container">
+  <div class="row">
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h5 class="card-title">No. of Faculty = <%=  facultyNumber  %></h5>
+        <hr>
+        <p class="card-text">Faculty card include the no. of faculty present overall the university</p>
+        <a href="/login/admin/1/faculty" class="btn btn-danger">Faculty</a>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h5 class="card-title">No. of Campus = <%= campusNumber %></h5>
+        <hr>
+        <p class="card-text">Campus Card include the total number od campuses present inside the System</p>
+        <a href="/login/admin/1/campus" class="btn btn-danger">Campus</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h5 class="card-title">No. of Colleges = <%= schoolNumber %></h5>
+        <hr>
+        <p class="card-text">Total Colleges present insiden the management system</p>
+        <a href="/login/admin/1/school" class="btn btn-danger">School</a>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;">
+      <div class="card-body">
+        <h5 class="card-title">No. of Students = <%= studentNumber %></h5>
+        <hr>
+        <p class="card-text">Total Colleges present insiden the management system</p>
+        <a href="/login/admin/1/student" class="btn btn-danger">Students</a>
+      </div>
+    </div>
+  </div>
+  <div class="row bottom">
+    <div class="card bottom" style="width: 20rem;">
+      <div class="card-body">
+        <h5 class="card-title">No. of Programmes = <%= programmeNumber %></h5>
+        <hr>
+        <p class="card-text">Total Programmes present in the schools for students</p>
+        <a href="/login/admin/1/programmes" class="btn btn-danger">Programmes</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  body {
+    background-color: #ff5e5e;
+  }
+
+  .row {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 50px;
+  }
+
+  .row.bottom {
+    margin-left: 25%;
+  }
+
+  .card {
+    margin-left: 13%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+
+  .card:hover {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5), 0 7px 24px 0 rgba(0, 0, 0, 0.25)
+  }
+
+  .btn:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+</style>

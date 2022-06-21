@@ -1,0 +1,44 @@
+<!-- INSERT INTO programmes (programmeCode,programmeTitle,programmeLevel,duration,school_id) VALUES (1001,'Data Science','Beginner','30 days',1); -->
+<%- include( "partials/adminheader" ) %>
+
+
+<div class="container container-property">
+    <h1>This is the New Programmes page</h1>
+
+    <form action="/login/admin/1/programmes" method="POST" id="programme-form" class="form-group">
+        <select name="programmeCode" id="" class="form-control" required>
+            <% programmeAwailable.forEach(function(el){ %>
+            <option value="<%= el %>"><%= el %></option>
+            <% }) %>
+        </select>
+        <input type="text" name="programmeTitle" placeholder="Programme Title" class="form-control" required>
+
+        <select name="programmeLevel" class="form-control" required>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Expert">Expert</option>
+        </select>
+
+        <select name="duration" class="form-control" required>
+            <% for(var i=0 ; i<= 100 ; i+= 5){ %>
+            <option value="<%= i %> days"><%= i %> days</option>
+            <% } %>
+        </select>
+
+        <select name="school_id" class="form-control" required>
+            <% schoolDetails.forEach(function(element){ %>
+            <option value="<%= element.school_id %>"><%= element.schoolname %></option>
+            <% }) %>
+        </select>
+
+        <!-- Course Creation -->
+        <div id="courses-container">
+            <button id="add-course-btn" class="btn btn-outline-danger"><i class="fas fa-plus"></i></button>
+            <input type="text" name="coursename" placeholder="Course Name" id="course-name"
+                class="form-control form-courses" />
+        </div>
+
+        <button type="submit" class="btn btn-outline-success btn-form">Submit</button>
+
+    </form>
+</div>

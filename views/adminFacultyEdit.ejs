@@ -1,0 +1,19 @@
+<%- include( "partials/adminheader" ) %>
+<div class="container container-property">
+    <h1>This is Faculty Edit page <%= facultyDetails.facultyname %> </h1>
+
+    <form action="/login/admin/1/faculty/<%= facultyDetails.faculty_id %>?_method=PUT" method="POST" class="form-group">
+        <input type="text" class="form-control" name="facultyName" value="<%= facultyDetails.facultyname %>"
+            placeholder="Faculty Name" required>
+        <input type="text" class="form-control" name="facultyField" value="<%= facultyDetails.facultyfield %>"
+            placeholder="Faculty Field" required>
+        <input type="text" class="form-control" name="dean" value="<%= facultyDetails.dean %>" placeholder="Dean"
+            required>
+        <select name="university_id" class="form-control" required>
+            <% universityDetails.forEach(function(element){ %>
+            <option value="<%= element.university_id %>"><%= element.universityname %></option>
+            <% }) %>
+        </select>
+        <input type="submit" class="btn btn-outline-success btn-form">
+    </form>
+</div>

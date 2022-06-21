@@ -1,0 +1,23 @@
+<%- include( "partials/adminheader" ) %>
+
+<!-- schoolName,building,campus_id,faculty_id -->
+<div class="container container-property">
+    <h1>This is the School Edit page <%= schoolDetails.schoolname %></h1>
+    <form action="/login/admin/1/school/<%= schoolDetails.school_id %>?_method=PUT" method="POST" class="form-group">
+        <input type="text" name="schoolName" value="<%= schoolDetails.schoolname%>" placeholder="Name"
+            class="form-control" required>
+        <input type="number" min="1" name="building" value="<%= schoolDetails.building%>" placeholder="building No."
+            class="form-control" required>
+        <select name="campus_id" class="form-control" required>
+            <% campusDetails.forEach(function(element){ %>
+            <option value="<%= element.campus_id %>"><%= element.campusname %></option>
+            <% }) %>
+        </select>
+        <select name="faculty_id" class="form-control" required>
+            <% facultyDetails.forEach(function(element){ %>
+            <option value="<%= element.faculty_id %>"><%= element.facultyname %></option>
+            <% }) %>
+        </select>
+        <input type="submit" class="btn btn-success btn-form">
+    </form>
+</div>

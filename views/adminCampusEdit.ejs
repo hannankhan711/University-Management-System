@@ -1,0 +1,22 @@
+<%- include( "partials/adminheader" ) %>
+
+<!-- campusName,address,distanceThroughTheCity,onlyBus,university_id -->
+<div class="container container-property">
+    <h1>This is the Campus edit page <%= campusDetails.campusname %></h1>
+    <form action="/login/admin/1/campus/<%= campusDetails.campus_id %>?_method=PUT" method="POST" class="form-group">
+        <input type="text" name="campusName" value="<%= campusDetails.campusname %>" placeholder="Campus Name"
+            class="form-control">
+        <input type="text" name="address" value="<%= campusDetails.address %>" placeholder="Address"
+            class="form-control">
+        <input type="text" name="distanceThroughTheCity" value="<%= campusDetails.distancethroughthecity %>"
+            placeholder="Campus Name" class="form-control">
+        <input type="text" name="onlyBus" value="<%= campusDetails.onlybus %>" placeholder="Campus Name"
+            class="form-control">
+        <select name="university_id" class="form-control">
+            <% universityDetails.forEach(function(element){ %>
+            <option value="<%= element.university_id %>"><%= element.universityname %></option>
+            <% }) %>
+        </select>
+        <input type="submit" class="btn btn-outline-success btn-form">
+    </form>
+</div>

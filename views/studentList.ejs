@@ -1,0 +1,90 @@
+<%- include( "partials/headers" ) %>
+
+<% faculty_id = facultyId[0].faculty_id %>
+
+<% facultyname = facultyStudentData[0].facultyname %>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="font-size: x-large;">
+    <a class="navbar-brand" style="font-size: xx-large;" href="/login/faculty/<%= faculty_id%>"><i
+            class="fas fa-user fa-lg"></i> <%=facultyname%></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/login/faculty/<%= faculty_id%>/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login/faculty/<%= faculty_id%>/student">Student List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout/">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <h1>Student List</h1>
+    <div id="list">
+        <div class="list-group">
+            <% facultyStudentData.forEach(function(element){ %>
+            <a class="list-group-item list-group-item-action"
+                href="/login/faculty/<%= faculty_id %>/student/<%= element.student_id %>"><%= element.studentname %></a>
+            <% }) %>
+        </div>
+    </div>
+    <div class="button">
+        <a href="/login/faculty/1/student/new" class="btn btn-primary">new student</a>
+    </div>
+</div>
+
+
+<style>
+    .list-group {
+        width: 400px;
+        text-align: center;
+        display: inline-block;
+        border-radius: 10px;
+    }
+
+    .list-group-item:hover {
+        background-color: #1c76fc;
+        color: white;
+    }
+
+    #list {
+        display: block;
+        text-align: center;
+    }
+
+    h1 {
+        text-transform: capitalize;
+        margin-top: 30px;
+        margin-bottom: 80px;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    .button {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .container {
+        border: 2px solid grey;
+        background-color: white;
+        width: 600px;
+        margin-top: 80px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 15px;
+    }
+
+    body {
+        background-color: #56abf5;
+    }
+</style>

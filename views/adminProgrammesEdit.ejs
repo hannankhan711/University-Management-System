@@ -1,0 +1,33 @@
+<%- include( "partials/adminheader" ) %>
+<!-- programmeCode,programmeTitle,programmeLevel,duration,school_id -->
+<div class="container container-property">
+    <h1>this is the programmes Edit page</h1>
+    <form action="/login/admin/1/programmes/<%= programmeDetails.programmecode %>?_method=PUT" method="POST"
+        class="form-group">
+        <input type="text" name="programmetitle" value="<%= programmeDetails.programmetitle %>" class="form-control"
+            required>
+        <select name="programmelevel" class="form-control" required>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Expert">Expert</option>
+        </select>
+        <select name="duration" id="" class="form-control" required>
+            <% for(var i=0 ; i<= 100 ; i+= 5){ %>
+            <option value="<%= i %> days"><%= i %> days</option>
+            <% } %>
+        </select>
+        <select name="school_id" id="" class="form-control">
+            <% schoolDetails.forEach(function(element){ %>
+            <option value="<%= element.school_id %>"><%= element.schoolname %></option>
+            <% }) %>
+        </select>
+        <div id="courses-container">
+            <button id="add-course-btn" class="btn btn-outline-danger"><i class="fas fa-plus"></i></button>
+            <% courseNames.forEach(function(el){ %>
+            <input type="text" value="<%= el.coursename %>" name="coursename" placeholder="course name"
+                class="form-control form-courses">
+            <% }) %>
+        </div>
+        <input type="submit" class="btn btn-outline-success btn-form">
+    </form>
+</div>

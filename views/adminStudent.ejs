@@ -1,0 +1,17 @@
+<%- include( "partials/adminheader" ) %>
+
+<div class="container container-property">
+    <h1>This is Student List</h1>
+    <% facultyDetails.forEach(function(elementFaculty){ %>
+    <h2 style="background-color: #ff5e5e;color: white;"><%= elementFaculty.schoolname %></h2>
+    <div class="student-list">
+        <ol>
+            <% studentDetails.forEach(function(elementStudent){ %>
+            <% if(elementFaculty.school_id == elementStudent.school_id) { %>
+            <li><%= elementStudent.studentname %></li>
+            <% } %>
+            <% }) %>
+        </ol>
+    </div>
+    <% }) %>
+</div>

@@ -1,0 +1,18 @@
+<%- include( "partials/adminheader" ) %>
+
+<!-- INSERT INTO campus(campusName,address,distanceThroughTheCity,onlyBus,university_id) VALUES ('Terna Campus','Terna Campus nerul west','200 meter','heanco',1); -->
+
+<div class='container container-property'>
+    <h1>This is the new campus form </h1>
+    <form action="/login/admin/1/campus" method="POST" class="form-group">
+        <input type="text" name="campusName" placeholder="Name" class="form-control" required>
+        <input type="text" name="address" placeholder="address" class="form-control" required>
+        <input type="text" name="distanceThroughTheCity" placeholder="Distance" class="form-control" required>
+        <input type="text" name="onlyBus" placeholder="Bus" class="form-control" required>
+        <select name="university_id" class="form-control" required>
+            <option value="1">University Of Mumbai</option>
+            <option value="2">University Of Pune</option>
+        </select>
+        <input type="submit" class="btn btn-outline-success btn-form">
+    </form>
+</div>

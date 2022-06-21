@@ -1,0 +1,120 @@
+<%- include( "partials/headers" ) %>
+<div class="jumbotron">
+    <h1>University Management System</h1>
+    <div class="container">
+        <p id="jumbotronPara">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <div class="button">
+            <a class="btn btn-outline-light" href="https://www.wikipedia.org/">Search</a>
+            <a class="btn btn-outline-light" href="https://www.lipsum.com/">More</a>
+        </div>   
+    </div>
+</div>
+<div class="container">
+    <h3 class="support">We Support</h3>
+    <h2>University Of Mumbai</h4>
+    <div class="container">
+        <div class="img-thumbnail">
+            <img class="img-fluid" src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2018/04/04/668092-mumbai-university-01.jpg" alt="">
+        </div>
+    </div>
+    <h3>About University Of Mumbai</h3>
+    <p id="UniversityPara">
+        The University of Mumbai, informally known as Mumbai University (MU) is a collegiate public state university located in Mumbai, Maharashtra.
+         It offers bachelors, masters and Doctoral courses, as well as diplomas and certificates in many disciplines like the Arts, Commerce, Science, Medical and Engineering.
+         The language of instruction for most courses is English.
+    </p>
+    <h2>University Of Pune</h4>
+    <div class="container">
+        <div class="img-thumbnail">
+            <img class="img-fluid" src="https://im.whatshot.in/img/2019/Mar/800px-university-of-pune-main-building-3-cropped-1551691604.jpg" alt="">
+        </div>
+    </div>
+    <h3>About University Of Pune</h3>
+    <p id="UniversityPara">
+        Savitribai Phule Pune University (SPPU), formerly University of Pune and University of Poona, is a collegiate public state university located in Pune, Maharashtra. 
+        Established in 1949, and spread over a 411 acres (1.66 km2) campus, the university is home to 43 academic departments.
+    </p>
+    <div id="buttons">
+        <a class="btn btn-outline-primary btn-lg" href="/login/faculty">faculty Login</a>
+        <a class="btn btn-outline-info btn-lg" href="/login/student">Student Login</a>
+    </div>
+    <div id="button2">
+        <a href="/login/admin" class="btn btn-outline-danger btn-lg">admin Login</a>
+    </div>
+
+</div>
+
+
+<style>
+    .jumbotron{
+	background: linear-gradient(-45deg, #0b8793,#0b8793,  #014e91, #014e91);
+	background-size: 400% 400%;
+	animation: gradient 15s ease-out;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+    h1{
+        color: white;
+        text-align: center;
+        margin-bottom: 80px;
+        font-weight: 500;
+        font-size: 6rem;
+        padding-top: 30px;
+    }
+    h3{
+        text-align: center;
+        margin-bottom: 50px;
+        padding-top: 30px;
+    }
+    #jumbotronPara{
+        color: white;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .button{
+        margin-top: 30pxs;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .img-thumbnail{
+        max-width: 700px;
+        margin: 0px auto;
+        text-align: center;
+    }
+    #UniversityPara{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    #buttons{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .container{
+        color: grey;
+    }
+    h2{
+        padding-bottom: 20px;
+        color: #696969;
+    }
+    #button2{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+</style>

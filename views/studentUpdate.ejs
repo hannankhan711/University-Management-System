@@ -1,0 +1,83 @@
+<%- include( "partials/headers" ) %>
+
+<div class="container">
+    <h1>This is student update form </h1>
+    <h2>Edit <%= student.studentname %></h2>
+    <div class="image">
+        <div class="img-thumbnail img-fluid">
+            <img class="img-fluid" src="/images/profile_pic.jpg">
+        </div>
+    </div>
+    <form action="/login/faculty/<%= facultyId %>/student/<%= studentId%>?_method=PUT" method="POST">
+        <div class="form-group">
+            <label>Name:</label><br>
+            <input class="form-control" type="text" value="<%= student.studentname%>" name="studentname"><br>
+            <label>birthday:</label><br>
+            <input type="date" class="form-control" name="birthday" value="" required><br>
+            <label>Year Of enrollment:</label><br>
+            <input type="date" class="form-control" name="yearofenrollment" value="" required><br>
+            <input type="submit" class="btn btn-outline-success btn-lg">
+        </div>
+
+    </form>
+</div>
+
+<style>
+    .img-thumbnail {
+        text-align: center;
+        width: 300px;
+        margin-bottom: 50px;
+    }
+
+    .image {
+        display: inline;
+        text-align: -webkit-center;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+        text-transform: capitalize;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        border: 1px solid #d1d6de;
+        text-align: center;
+        border-radius: 5px;
+        padding-bottom: 20px;
+    }
+
+    label {
+        padding-top: 10px;
+        padding-left: 30px;
+    }
+
+    .form-control {
+        width: 300px;
+        text-align: center;
+        margin-left: 430px;
+    }
+
+    .btn {
+        margin-left: 40px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    body {
+        background-color: #56abf5;
+    }
+
+    .container {
+        background-color: white;
+        padding-bottom: 20px;
+        border-radius: 20px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+</style>

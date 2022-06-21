@@ -1,0 +1,150 @@
+<%- include( "partials/headers" ) %>
+
+<!-- facultyfield
+dean
+campusname
+address
+distancethroughthecity
+onlybus -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="font-size: x-large;">
+    <a class="navbar-brand" style="font-size: xx-large;" href="/login/faculty/<%= faculty.faculty_id%>"><i
+            class="fas fa-user fa-lg"></i> <%= faculty.facultyname%></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="<%= faculty.faculty_id%>">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login/faculty/<%= faculty.faculty_id%>/student">Student List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout/">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Welcome to <%= faculty.universityname%></h1>
+    <h2>Welcome <%= faculty.facultyname%></h2>
+    <h3 class="inputData">Details:</h3>
+    <div class="img-thumbnail" id="image">
+        <div class="image">
+            <img class="img-fluid" src="/images/profile_pic.jpg" />
+        </div>
+        <div class="details">
+            <label id="field" class="inputData">Field: </label>
+            <label><%= faculty.facultyfield%></label><br>
+            <label id="dean" class="inputData">Dean: </label>
+            <label><%= faculty.dean%></label><br>
+            <label id="campus" class="inputData">Campus: </label>
+            <label><%= faculty.campusname %></label>
+        </div>
+    </div>
+    <h3 class="inputData"><i class="fas fa-info-circle"></i>Address Details:</h3>
+    <div class="img-thumbnail">
+        <label id="address" class="inputData">Address: </label>
+        <label><%= faculty.address%></label><br>
+        <label id="distance" class="inputData">Distance: </label>
+        <label><%= faculty.distancethroughthecity %></label><br>
+        <label id="bus" class="inputData">Bus: </label>
+        <label><%= faculty.onlybus %></label>
+    </div>
+    <div class="button">
+        <a class="btn btn-primary btn-lg" href="/login/faculty/<%= faculty.faculty_id%>/student" id="button">Student
+            List</a>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #56abf5;
+    }
+
+    .container {
+        background-color: white;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    img {
+        width: 200px;
+    }
+
+    .image {
+        max-width: 300px;
+        float: left;
+        margin-right: 250px;
+    }
+
+    .img-thumbnail {
+        height: 210px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-size: 4rem;
+        font-weight: 500;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    h4 {
+        float: left;
+    }
+
+    label {
+        font-size: x-large;
+        margin-top: 20px;
+    }
+
+    #field {
+        margin-right: 85px;
+
+    }
+
+    #dean {
+        margin-right: 80px;
+    }
+
+    #campus {
+        margin-right: 50px;
+    }
+
+    .inputData {
+        color: #404040;
+        font-weight: bolder;
+        margin-left: 30px;
+    }
+
+    #bus {
+        margin-right: 90px;
+    }
+
+    #address {
+        margin-right: 40px;
+    }
+
+    #distance {
+        margin-right: 30px;
+    }
+
+    #button {
+        margin-bottom: 30px;
+    }
+
+    .button {
+        text-align: center;
+    }
+</style>

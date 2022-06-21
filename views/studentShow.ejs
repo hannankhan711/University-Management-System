@@ -1,0 +1,157 @@
+<%- include( "partials/headers" ) %>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="font-size: x-large;background-color:#00bab4">
+    <a class="navbar-brand" style="font-size: xx-large;" href="/login/student/<%= school.student_id %>"><i
+            class="fas fa-user fa-lg"></i> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%= students.student_id%>/details">Programmes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout/">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Welcome to <%= school.schoolname%></h1>
+    <h2>Institute Details:</h2>
+    <div class="img-thumbnail" id="image">
+        <div class="image">
+            <img class="img-fluid" src="/images/profile_pic.jpg" />
+        </div>
+        <div class="personal">
+            <label class="details">Name: </label><label id="name"><%= school.studentname%></label><br>
+            <label class="details">Birthday: </label><label
+                id="birthday"><%= school.birthday.toDateString() %></label><br>
+            <label class="details">Enrolled: </label><label
+                id="enrollment"><%= school.yearofenrollment.toDateString() %></label><br>
+            <label class="details">Faculty: </label><label id="facultyname"><%= school.facultyname%></label>
+        </div>
+    </div>
+    <h2>Programme Details:</h2>
+
+    <div class="programme">
+        <label class="details">Programme Title: </label><label
+            id="programmetitle"><%= school.programmetitle %></label><br>
+        <label class="details">Duration: </label><label id="duration"><%= school.duration%></label><br>
+        <label class="details">Programme Level: </label><label
+            id="programmelevel"><%= school.programmelevel %></label><br>
+        <div class="button">
+            <a href="/login/student/<%= students.student_id%>/details" class="btn btn-lg">go to details</a>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    img {
+        width: 200px;
+    }
+
+    .image {
+        max-width: 200px;
+        float: left;
+        margin-right: 250px;
+    }
+
+    .img-thumbnail {
+        height: 210px;
+        margin-bottom: 30px;
+    }
+
+    .details {
+        font-size: large;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+
+    .personal {
+        margin-top: 20px;
+    }
+
+    .programme {
+        border: 1px solid #d1d6de;
+        border-radius: 10px;
+        display: inline-block;
+        margin-bottom: 30px;
+        width: 100%;
+        padding-top: 20px;
+        padding-left: 30px;
+    }
+
+    h1 {
+        padding-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 80px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    body {
+        background-color: #40e3db;
+    }
+
+    .button {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    #name {
+        margin-left: 65px;
+    }
+
+    #birthday {
+        margin-left: 45px;
+    }
+
+    #enrollment {
+        margin-left: 47px;
+    }
+
+    #facultyname {
+        margin-left: 57px;
+    }
+
+    #programmetitle {
+        margin-left: 36px;
+    }
+
+    #duration {
+        margin-left: 101px;
+    }
+
+    #programmelevel {
+        margin-left: 30px;
+    }
+
+    .btn {
+        background-color: #00bab4;
+        color: white;
+    }
+
+    .btn:hover {
+        color: teal;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
+</style>

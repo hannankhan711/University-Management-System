@@ -1,0 +1,55 @@
+<%- include( "partials/headers" ) %>
+
+    <form action="/login/faculty" method="POST">
+        <div class="container">
+            <h1>Faculty Login</h1>
+            <div class="form">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="username" id="inputFields">
+                    <small class="form-text text-muted">Don't share Your Username With Each Other</small>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="password" id="inputFields">
+                </div>
+                <div class="links">
+                    <input type="submit" class="btn btn-primary btn-block" value="login" id="button">
+                    <a id="anchor" href="">forgot password</a>
+                </div>
+                <div class="text">
+                    <small class="form-text text-muted">Faculty Name: Shanawaz </small>
+                    <small class="form-text text-muted">Password: password </small>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <style>
+        h1 {
+            margin-bottom: 90px;
+            padding-top: 70px;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        .container {
+            background-color: white;
+            margin: 150px auto;
+            max-width: 500px;
+            height: 600px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 15px;
+        }
+
+        #anchor {
+            margin-left: 350px;
+        }
+
+        .text {
+            margin-top: 80px;
+            margin-left: 30px;
+        }
+
+        body {
+            background-color: #56abf5;
+        }
+    </style>

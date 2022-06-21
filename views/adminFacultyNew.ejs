@@ -1,0 +1,18 @@
+<!-- facultyName, facultyPass, facultyField, dean, building, university_id  -->
+<%- include( "partials/adminheader" ) %>
+<div class="container container-property">
+    <h1>This is the new Faculty Page</h1>
+    <form action="/login/admin/1/faculty" method="POST" class="form-group">
+        <input class="form-control" type="text" name="facultyName" placeholder="Facuty Name" required>
+        <input class="form-control" type="password" name="facultyPass" placeholder="password" required>
+        <input class="form-control" type="text" name="facultyField" placeholder="Field" required>
+        <input class="form-control" type="text" name="dean" placeholder="dean" required>
+        <input class="form-control" type="number" name="building" placeholder="building no." required>
+        <select name="university_id" class="form-control">
+            <% universityDetails.forEach(function(element){ %>
+            <option value="<%= element.university_id %>"><%= element.universityname %></option>
+            <% }) %>
+        </select>
+        <input type="submit" class="btn btn-outline-success btn-form">
+    </form>
+</div>

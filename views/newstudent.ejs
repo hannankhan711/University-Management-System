@@ -1,0 +1,70 @@
+<%- include( "partials/headers" ) %>
+
+
+
+<div class="container">
+    <h1>Add Student</h1>
+    <form action="/login/faculty/<%=faculty.faculty_id%>/student" method="POST">
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" name="studentname" placeholder="name">
+                </div>
+                <div class="col">
+                    <input class="form-control" type="password" name="studentpass" placeholder="password">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="">Birthday</label><input class="form-control" type="date" name="birthday">
+                </div>
+                <div class="col">
+                    <label for="">Year Of Enrollment</label><input class="form-control" type="date"
+                        name="yearOfEnrollment">
+                </div>
+            </div>
+            <input class="form-control extra" type="number" name="programmeCode" placeholder="Programme Code">
+            <div class="button">
+                <input type="submit" class="btn btn-primary btn-lg">
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    h1 {
+        text-align: center;
+        padding-top: 50px;
+        margin-bottom: 70px;
+    }
+
+    .form-control {
+        margin-bottom: 50px;
+    }
+
+    .form-control.extra {
+        width: 350px;
+        margin-left: 380px;
+    }
+
+    .btn {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        display: block;
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 100px;
+        background-color: white;
+        border-radius: 10px;
+        border: 2px solid #005aad;
+    }
+
+    body {
+        background-color: #56abf5;
+    }
+</style>

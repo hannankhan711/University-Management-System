@@ -1,0 +1,98 @@
+<%- include( "partials/headers" ) %>
+
+<% programmetitle = studentProgrammes[0].programmetitle %>
+<% duration =  studentProgrammes[0].duration %>
+<% level = studentProgrammes[0].programmelevel %>
+<% code = studentProgrammes[0].programmecode %>
+<% enrollment = studentProgrammes[0].yearofenrollment %>
+<% student_id = studentProgrammes[0].student_id %>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="font-size: x-large;background-color:#00bab4">
+    <a class="navbar-brand" style="font-size: xx-large;" href="/login/student/<%= student_id %>"><i
+            class="fas fa-user fa-lg"></i> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/login/student/<%= student_id %>">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login/faculty">Programmes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout/">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>programme details</h1>
+    <label class="details">Duration:</label><label class="details"><%= duration %></label>
+    <label class="details" id="programme">Programme Level:</label><label class="details"><%= level %></label><br>
+    <label class="details">Programme Code: </label><label class="details"><%= code %></label>
+    <label class="details" id="enrollment">Enrollment:</label><label
+        class="details"><%= enrollment.toDateString() %></label><br>
+    <label class="details">Programme Name:</label><br><label class="details"><%= programmetitle%></label>
+    <div class="list">
+        <ul class="list-group">
+            <% studentProgrammes.forEach(function(element){ %>
+            <li class="list-group-item"><%= element.coursename %></li>
+            <% }) %>
+        </ul>
+    </div>
+</div>
+
+<style>
+    .list-group-item:hover {
+        color: white;
+        background-color: #00bab4;
+    }
+
+    h1 {
+        padding-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 3rem;
+        text-transform: capitalize;
+    }
+
+    .list-group {
+        width: 300px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 100px;
+        border: 2px solid black;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    body {
+        background-color: #40e3db;
+    }
+
+    .details {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    .list {
+        display: inline-block;
+        text-align: center;
+        margin-left: 200px;
+    }
+
+    #programme {
+        margin-left: 400px;
+    }
+
+    #enrollment {
+        margin-left: 310px;
+    }
+</style>
